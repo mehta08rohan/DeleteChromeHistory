@@ -19,10 +19,10 @@ while result:
 	for rows in cur.execute(f"SELECT id,url FROM urls WHERE url LIKE '%{keyword}%'"):
 		print('Printing Rows!')
 		print(rows)
-		# id=row[0]
-		# ids.append((id,))
+		id=row[0]
+		ids.append((id,))
 
-	# con.executemany('DELETE FROM urls WHERE id=?',ids)
+	con.executemany('DELETE FROM urls WHERE id=?',ids)
 
-	# con.commit()
+	con.commit()
 con.close()
